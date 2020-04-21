@@ -2,16 +2,17 @@
 
     <table *ngIf="employees">
         <!-- ADD HEADERS -->
-        <tr>
-            <th *ngFor="let col of columns">{{col}}
-            </th>
-        </tr>
-
+        <thead>
+          <tr>
+              <th *ngFor="let col of columns">{{col}}</th>
+          </tr>
+        </thead>
         <!-- BIND ARRAY TO TABLE -->
-        <tr *ngFor="let employee of paginated_employees">
+        <tbody>
+          <tr *ngFor="let employee of paginated_employees">
             <td *ngFor="let col of columns">{{employee[col]}}</td>
-        </tr>
-        
+          </tr>
+        </tbody>
     </table>
     <div class="center">
       <div class="pagination">
