@@ -12,7 +12,8 @@ export class NgDatatableComponentComponent implements OnInit {
 
   ngOnInit() {
     this.employees = employeeDetails;
-    console.log(employeeDetails)
+    console.log(employeeDetails);
+    this.columns = ["name", "phone", "email", "company", "date_entry", "org_num", "address_1", "city", "zip", "geo", "status", "fee", "url", "date_first", "date_recent"];
   }
 
 }
