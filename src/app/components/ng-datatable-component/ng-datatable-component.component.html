@@ -11,7 +11,7 @@
         </tr>
 
         <!-- BIND ARRAY TO TABLE -->
-        <tr *ngFor="let employee of employees">
+        <tr *ngFor="let employee of paginated_employees">
             <td *ngFor="let col of columns">{{employee[col]}}</td>
         </tr>
     </table>

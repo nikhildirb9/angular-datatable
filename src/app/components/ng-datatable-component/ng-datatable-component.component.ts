@@ -8,12 +8,22 @@ import employeeDetails from '../../data/sample_data.json';
 })
 export class NgDatatableComponentComponent implements OnInit {
   employees: object[];
+  columns = ["name", "phone", "email", "company", "date_entry", "org_num", "address_1", "city", "zip", "geo", "status", "fee", "url", "date_first", "date_recent"];
+  paginated_employees;
+  page = {
+    number: 0,
+    size: 10
+  };
   constructor() { }
 
   ngOnInit() {
     this.employees = employeeDetails;
-    console.log(employeeDetails);
-    this.columns = ["name", "phone", "email", "company", "date_entry", "org_num", "address_1", "city", "zip", "geo", "status", "fee", "url", "date_first", "date_recent"];
+    this.setUpPagination()
+  }
+
+  setUpPagination() {
+    const start = this.page.number * this.page.size;
+    this.paginated_employees = this.employees.slice(start, start + this.page.size);
   }
 
 }
