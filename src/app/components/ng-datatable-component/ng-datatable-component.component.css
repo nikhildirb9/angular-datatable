@@ -11,3 +11,8 @@ td, th {
   text-align: left;
   padding: 8px;
 }
+
+.active{
+  color: red;
+  font-size: bold;
+}

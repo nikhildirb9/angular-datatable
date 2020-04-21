@@ -19,8 +19,11 @@
         </tr>
         <tfoot>
     <tr>
-       <td (click)="showPageData(i)" *ngFor="let page of [].constructor(pages); let i=index">
-      {{i+1}}
+       <td (click)="showPageData(i)" *ngFor="let item of [].constructor(pages); let i=index"
+       [class.active]="page.number === i"
+       >
+      
+      <span> {{i+1}}</span>
     </td>
     </tr>
   </tfoot>

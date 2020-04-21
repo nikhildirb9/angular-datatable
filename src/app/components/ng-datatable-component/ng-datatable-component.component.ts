@@ -11,6 +11,8 @@ export class NgDatatableComponentComponent implements OnInit {
   columns = ["name", "phone", "email", "company", "date_entry", "org_num", "address_1", "city", "zip", "geo", "status", "fee", "url", "date_first", "date_recent"];
   paginated_employees;
   pages = 5;
+  active=[];
+  selected;
   page = {
     number: 0,
     size: 10
@@ -23,10 +25,10 @@ export class NgDatatableComponentComponent implements OnInit {
   }
 
   setUpPagination() {
-    console.log(this.page);
     this.pages = this.employees.length/this.page.size;
     const start = this.page.number * this.page.size;
     this.paginated_employees = this.employees.slice(start, start + this.page.size);
+    this.selected = this.page.number;
   }
 
   showPageData(pageNumber) {
@@ -35,6 +37,7 @@ export class NgDatatableComponentComponent implements OnInit {
   }
 
   updateTable() {
+    this.page.number = 0;
     this.setUpPagination();
   }
 
