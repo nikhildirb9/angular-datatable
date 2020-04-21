@@ -41,4 +41,8 @@ export class NgDatatableComponentComponent implements OnInit {
     this.setUpPagination();
   }
 
+  onSubmit(id, status) {
+    console.log(id, status);
+  }
+
 }

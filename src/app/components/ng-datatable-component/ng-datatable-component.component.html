@@ -5,12 +5,14 @@
         <thead>
           <tr>
               <th *ngFor="let col of columns">{{col}}</th>
+              <th></th>
           </tr>
         </thead>
         <!-- BIND ARRAY TO TABLE -->
         <tbody>
           <tr *ngFor="let employee of paginated_employees">
             <td *ngFor="let col of columns">{{employee[col]}}</td>
+            <td> <button (click)="onSubmit(employee.id, employee.status)">Submit</button> </td>
           </tr>
         </tbody>
     </table>
