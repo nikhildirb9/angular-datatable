@@ -1,7 +1,11 @@
-<div style="text-align:left;width:500px;">
-    <h1>
-        {{ title }}!
-    </h1>
+<div>
+    <div class="form-group">
+        <label for="page size">page size</label>
+        <input type="text" class="form-control"
+          [(ngModel)]="page.size"
+          (keydown.enter)="updateTable()"
+         id="pageSize">
+      </div>
 
     <table *ngIf="employees">
         <!-- ADD HEADERS -->
@@ -14,5 +18,13 @@
         <tr *ngFor="let employee of paginated_employees">
             <td *ngFor="let col of columns">{{employee[col]}}</td>
         </tr>
+        <tfoot>
+    <tr>
+       <td (click)="showPageData(i)" *ngFor="let page of [].constructor(pages); let i=index">
+      {{i+1}}
+    </td>
+    </tr>
+  </tfoot>
     </table>
+   
 </div>
