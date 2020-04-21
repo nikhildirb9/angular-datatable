@@ -23,13 +23,14 @@ export class NgDatatableComponentComponent implements OnInit {
   }
 
   setUpPagination() {
+    console.log(this.page);
     this.pages = this.employees.length/this.page.size;
     const start = this.page.number * this.page.size;
     this.paginated_employees = this.employees.slice(start, start + this.page.size);
   }
 
   showPageData(pageNumber) {
-    this.page.number = pageNumber;
+    this.page.number = JSON.parse(pageNumber);
     this.setUpPagination();
   }
 

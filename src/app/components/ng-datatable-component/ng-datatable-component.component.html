@@ -1,12 +1,11 @@
 <div>
     <div class="form-group">
         <label for="page size">page size</label>
-        <input type="text" class="form-control"
+        <input type="number" class="form-control"
           [(ngModel)]="page.size"
           (keydown.enter)="updateTable()"
          id="pageSize">
       </div>
-
     <table *ngIf="employees">
         <!-- ADD HEADERS -->
         <tr>
