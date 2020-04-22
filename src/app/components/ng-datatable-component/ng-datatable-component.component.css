@@ -1,9 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   overflow: auto;
-  margin-bottom: 40px;
+  display: block;
+  height: calc(100vh - 114px);
+  margin: 0 -8px 30px -8px;
 }
 
 thead {
@@ -25,37 +26,38 @@ td, th {
   word-break: break-all;
 }
 
-.active{
-  color: red;
-  font-size: bold;
-}
-
-.center {
-  text-align: center;
+nav {
+  position: fixed;
+  bottom: 0;
 }
 
 .pagination {
-  display: inline-block;
-  margin-bottom: 20px;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: .25em;
+  margin-top: 0;
+  margin-bottom: 0;
 }
-
-.pagination a {
-  color: black;
-  float: left;
-  padding: 8px 16px;
+.page-link {
+  position: relative;
+  display: block;
+  padding: .5em .75em;
+  margin-left: -1px;
+  line-height: 1.25;
+  color:  #007bff;
+  background-color: #fff;
+  border: 1px solid #dee2e6
+}
+a {
   text-decoration: none;
-  transition: background-color .3s;
-  border: 1px solid #ddd;
-  margin: 0 4px;
 }
-
-.pagination a.active {
-  background-color: red;
-  color: white;
-  border: 1px solid #4CAF50;
+.active>.page-link{
+  z-index: 1;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
 }
-
-.pagination a:hover:not(.active) {background-color: #ddd;}
 
 .form-group label {
   padding-right: 10px;
