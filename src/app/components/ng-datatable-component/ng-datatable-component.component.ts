@@ -25,7 +25,7 @@ export class NgDatatableComponentComponent implements OnInit {
   }
 
   setUpPagination() {
-    this.pages = this.employees.length/this.page.size;
+    this.pages = Math.round(this.employees.length/this.page.size);
     const start = this.page.number * this.page.size;
     this.paginated_employees = this.employees.slice(start, start + this.page.size);
     this.selected = this.page.number;

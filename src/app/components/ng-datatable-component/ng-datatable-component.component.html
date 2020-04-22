@@ -1,6 +1,7 @@
 <div>
 
-    <table *ngIf="employees">
+
+<table *ngIf="employees">
         <!-- ADD HEADERS -->
         <thead>
           <tr>
@@ -16,21 +17,51 @@
           </tr>
         </tbody>
     </table>
-    <div class="center">
+
+    <!-- <div class="center">
+
       <div class="pagination">
+
        <a (click)="showPageData(i)" *ngFor="let item of [].constructor(pages); let i=index"
+
        [class.active]="page.number === i"
+
        >
+
       
+
       <span> {{i+1}}</span>
+
     </a>
-    </div>
+
+    </div> -->
+
+    <nav >
+
+        <ul class="pagination">
+
+          <li (click)="showPageData(i)" *ngFor="let item of [].constructor(pages); let i=index" [class.active]="page.number===i" class="pagination-item">
+
+            <a class="page-link">{{i+1}}</a>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
         <div class="form-group">
+
         <label for="page size">page size</label>
+
         <input type="number" class="form-control"
+
           [(ngModel)]="page.size"
+
           (keydown.enter)="updateTable()"
+
          id="pageSize">
+
       </div>
-   
+
 </div>
