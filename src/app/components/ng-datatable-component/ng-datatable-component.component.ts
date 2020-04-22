@@ -10,8 +10,7 @@ export class NgDatatableComponentComponent implements OnInit {
   employees: object[];
   columns = ["name", "phone", "email", "company", "date_entry", "org_num", "address_1", "city", "zip", "geo", "status", "fee", "url", "date_first", "date_recent"];
   paginated_employees;
-  pages = 5;
-  active=[];
+  pages;
   selected;
   page = {
     number: 0,
